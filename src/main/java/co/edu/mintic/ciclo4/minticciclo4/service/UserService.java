@@ -45,20 +45,21 @@ public class UserService {
         }
     }
 
-    public User autenticate(String email, String password) {
+    public Optional<User> autenticate(String email, String password) {
 
-        User user = repository.getUserByEmailAAndPassword(email, password);
+        Optional<User> user = repository.getUserByEmailAAndPassword(email, password);
 
         if (user == null) {
 
-            User newUser = new User();
-            newUser.setEmail(email);
-            newUser.setPassword(password);
-            newUser.setName("NO DEFINIDO");
+            Optional<User> newUser = Optional.of(new User());
+            newUser.get().setEmail(email);
+            newUser.get().setPassword(password);
+            newUser.get().setName("NO DEFINIDO");
 
             return newUser;
         } else {
             return user;
         }
     }
+
 }

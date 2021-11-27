@@ -1,15 +1,16 @@
 package co.edu.mintic.ciclo4.minticciclo4.repository;
 
 import co.edu.mintic.ciclo4.minticciclo4.model.User;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
-public interface UserRepository extends CrudRepository<User, Integer> {
+import java.util.Optional;
 
-    @Query(value = "SELECT * FROM users WHERE email LIKE ?1", nativeQuery = true)
-    User getUserByEmail(@Param("email") String email);
+public interface UserRepository extends MongoRepository<User, String> {
 
-    @Query(value = "SELECT * FROM users WHERE email LIKE ?1 AND password LIKE ?2", nativeQuery = true)
-    User getUserByEmailAAndPassword(@Param("email") String email, @Param("password") String password);
+    @Query("{email :?0}")
+    Optional<User> getUserByEmail(String email);
+
+    @Query("{email :?0, password :?1}")
+    Optional<User> getUserByEmailAAndPassword(String email, String password);
 }

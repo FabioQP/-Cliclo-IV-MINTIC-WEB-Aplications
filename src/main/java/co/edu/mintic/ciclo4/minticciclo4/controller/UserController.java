@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/user")
@@ -34,7 +35,7 @@ public class UserController {
     }
 
     @GetMapping("/{email}/{password}")
-    public User authenticateUser(@PathVariable("email") String email, @PathVariable("password") String password) {
+    public Optional<User> authenticateUser(@PathVariable("email") String email, @PathVariable("password") String password) {
 
         return service.autenticate(email, password);
     }

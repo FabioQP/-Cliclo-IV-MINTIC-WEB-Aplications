@@ -1,68 +1,29 @@
 package co.edu.mintic.ciclo4.minticciclo4.model;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-import java.io.Serializable;
+import java.util.Date;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
-@Entity
-@Table(name = "users")
-@JsonPropertyOrder({ "id", "email", "password", "name"})
-public class User implements Serializable {
+@Document(collection = "usuarios")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User {
 
     @Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(length = 11)
-    private Integer id;
-
-    @NotBlank(message = "Email is mandatory")
-    @Column(length = 50)
-    @Size(min = 5, max = 50)
-    private String email;
-
-    @NotBlank(message = "Name is mandatory")
-    @Column(length = 80)
-    @Size(min = 1, max = 80)
+    private String id;
+    private String identification;
     private String name;
-
-    @NotBlank(message = "Password is mandatory")
-    @Column(length = 80)
-    @Size(min = 1, max = 80)
+    private Date birthDay;
+    private String monthBirthDay;
+    private String address;
+    private String cellPhone;
+    private String email;
     private String password;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    private String zone;
+    private String type;
 }
