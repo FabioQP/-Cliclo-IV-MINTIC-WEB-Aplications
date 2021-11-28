@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/fragance")
 @CrossOrigin(origins = "*",methods = {RequestMethod.PUT,RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE})
-public class UserController {
+public class FraganceController {
 
     @Autowired
     private UserService service;
@@ -39,4 +39,5 @@ public class UserController {
 
         return service.autenticate(email, password);
     }
+
 }
