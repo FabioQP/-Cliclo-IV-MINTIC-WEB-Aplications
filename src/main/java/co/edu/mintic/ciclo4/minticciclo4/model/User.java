@@ -26,4 +26,13 @@ public class User {
     private String password;
     private String zone;
     private String type;
+    public void setEmail(String email2) {
+    }
+    public void setName(String string) {
+    }
+    public void setPassword(String password2) {
+    }
+    public String getId() {
+        return null;
+    }
 }
