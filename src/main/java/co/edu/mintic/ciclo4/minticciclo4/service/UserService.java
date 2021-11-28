@@ -1,5 +1,6 @@
 package co.edu.mintic.ciclo4.minticciclo4.service;
 
+import co.edu.mintic.ciclo4.minticciclo4.model.Fragance;
 import co.edu.mintic.ciclo4.minticciclo4.model.User;
 import co.edu.mintic.ciclo4.minticciclo4.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,5 +62,37 @@ public class UserService {
             return user;
         }
     }
+/*
+    public User update(User user) {
 
+        if(user.getId() == null) {
+            return repository.save(user);
+        } else {
+            Optional<User> result = repository.findById(user.getId());
+            if(result.isPresent()) {
+
+                User existing = result.get();
+                existing.setIdentification(Optional.of(user.getIdentification()).orElse(existing.getIdentification()));
+                existing.setCategory(Optional.of(user.getCategory()).orElse(existing.getCategory()));
+                existing.setPresentation(Optional.of(user.getPresentation()).orElse(existing.getPresentation()));
+                existing.setDescription(Optional.of(user.getDescription()).orElse(existing.getDescription()));
+                existing.setAvailability(Optional.of(user.isAvailability()).orElse(existing.isAvailability()));
+                existing.setPrice(Optional.of(user.getPrice()).orElse(existing.getPrice()));
+                existing.setQuantity(Optional.of(user.getQuantity()).orElse(existing.getQuantity()));
+                existing.setPhotography(Optional.of(user.getPhotography()).orElse(existing.getPhotography()));
+
+                return repository.save(existing);
+            } else {
+                return fragance;
+            }
+        }
+    }
+*/
+    /*
+    public boolean delete(String reference) {
+
+        repository.deleteById(reference);
+        return true;
+    }
+     */
 }
