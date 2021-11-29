@@ -1,6 +1,7 @@
 package co.edu.mintic.ciclo4.minticciclo4.controller;
 
 import co.edu.mintic.ciclo4.minticciclo4.model.User;
+import co.edu.mintic.ciclo4.minticciclo4.service.FraganceService;
 import co.edu.mintic.ciclo4.minticciclo4.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,8 +16,8 @@ import java.util.Optional;
 public class FraganceController {
 
     @Autowired
-    private UserService service;
-
+    private FraganceService service;
+/*
     @GetMapping("/all")
     public List<User> getAll() {
         return service.findAll();
@@ -39,5 +40,5 @@ public class FraganceController {
 
         return service.autenticate(email, password);
     }
-
+*/
 }
