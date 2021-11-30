@@ -46,14 +46,14 @@ public class FraganceService {
             if(result.isPresent()) {
 
                 Fragance existing = result.get();
-                existing.setBrand(Optional.of(fragance.getBrand()).orElse(existing.getBrand()));
-                existing.setCategory(Optional.of(fragance.getCategory()).orElse(existing.getCategory()));
-                existing.setPresentation(Optional.of(fragance.getPresentation()).orElse(existing.getPresentation()));
-                existing.setDescription(Optional.of(fragance.getDescription()).orElse(existing.getDescription()));
-                existing.setAvailability(Optional.of(fragance.isAvailability()).orElse(existing.isAvailability()));
-                existing.setPrice(Optional.of(fragance.getPrice()).orElse(existing.getPrice()));
-                existing.setQuantity(Optional.of(fragance.getQuantity()).orElse(existing.getQuantity()));
-                existing.setPhotography(Optional.of(fragance.getPhotography()).orElse(existing.getPhotography()));
+                existing.setBrand(fragance.getBrand());
+                existing.setCategory(fragance.getCategory());
+                existing.setPresentation(fragance.getPresentation());
+                existing.setDescription(fragance.getDescription());
+                existing.setAvailability(fragance.isAvailability());
+                existing.setPrice(fragance.getPrice());
+                existing.setQuantity(fragance.getQuantity());
+                existing.setPhotography(fragance.getPhotography());
 
                 return repository.save(existing);
             } else {

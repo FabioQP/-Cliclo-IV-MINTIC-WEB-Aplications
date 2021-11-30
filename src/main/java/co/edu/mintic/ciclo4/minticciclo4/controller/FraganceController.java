@@ -1,14 +1,13 @@
 package co.edu.mintic.ciclo4.minticciclo4.controller;
 
+import co.edu.mintic.ciclo4.minticciclo4.model.Fragance;
 import co.edu.mintic.ciclo4.minticciclo4.model.User;
 import co.edu.mintic.ciclo4.minticciclo4.service.FraganceService;
-import co.edu.mintic.ciclo4.minticciclo4.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/fragance")
@@ -17,28 +16,27 @@ public class FraganceController {
 
     @Autowired
     private FraganceService service;
-/*
+
     @GetMapping("/all")
-    public List<User> getAll() {
+    public List<Fragance> getAll() {
         return service.findAll();
     }
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public User save(@RequestBody User user) {
-        return service.save(user);
+    public Fragance save(@RequestBody Fragance fragance) {
+        return service.save(fragance);
     }
 
-    @GetMapping("/emailexist/{email}")
-    public boolean isEmailPresent(@PathVariable("email") String email) {
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Fragance update(@RequestBody Fragance fragance) {
 
-        return service.isEmailPresent(email);
+        return service.update(fragance);
     }
 
-    @GetMapping("/{email}/{password}")
-    public Optional<User> authenticateUser(@PathVariable("email") String email, @PathVariable("password") String password) {
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") String id) { return service.delete(id); }
 
-        return service.autenticate(email, password);
-    }
-*/
 }
