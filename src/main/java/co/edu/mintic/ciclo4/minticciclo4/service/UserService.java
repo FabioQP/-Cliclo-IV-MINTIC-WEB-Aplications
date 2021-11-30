@@ -31,7 +31,7 @@ public class UserService {
         if(user.getId() == null) {
             return repository.save(user);
         } else {
-            Optional<User> result = repository.findById(user.getId());
+            Optional<User> result = repository.findById(user.getId().toString());
             if(result.isEmpty()) {
                 return repository.save(user);
             } else {
@@ -69,7 +69,7 @@ public class UserService {
         if(user.getId() == null) {
             return repository.save(user);
         } else {
-            Optional<User> result = repository.findById(user.getId());
+            Optional<User> result = repository.findById(user.getId().toString());
             if(result.isPresent()) {
 
                 User existing = result.get();
