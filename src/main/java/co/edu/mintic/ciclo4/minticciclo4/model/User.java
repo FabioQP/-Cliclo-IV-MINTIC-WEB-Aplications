@@ -1,5 +1,6 @@
 package co.edu.mintic.ciclo4.minticciclo4.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,14 +13,15 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonPropertyOrder({ "id", "identification", "name", "address",  "cellPhone", "email", "password", "zone", "type"})
 public class User {
 
     @Id
     private String id;
     private String identification;
     private String name;
-    private Date birthDay;
-    private String monthBirthDay;
+    // private Date birthDay;
+    // private String monthBirthDay;
     private String address;
     private String cellPhone;
     private String email;
