@@ -9,6 +9,9 @@ import java.util.Optional;
 
 public interface UserRepository extends MongoRepository<User, String> {
 
+    @Query("{id : { $eq: ?0 }}")
+    List<User> getUserById(Integer id);
+
     @Query("{email : { $eq: ?0 }}")
     List<User> getUserByEmail(String email);
 

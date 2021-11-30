@@ -69,10 +69,10 @@ public class UserService {
         if(user.getId() == null) {
             return repository.save(user);
         } else {
-            Optional<User> result = repository.findById(user.getId().toString());
-            if(result.isPresent()) {
+            List<User> result = repository.getUserById(user.getId());
+            if(result.size() != 0) {
 
-                User existing = result.get();
+                User existing = result.get(0);
                 existing.setIdentification(user.getIdentification());
                 existing.setName(user.getName());
                 // existing.setBirthDay(user.getBirthDay());
