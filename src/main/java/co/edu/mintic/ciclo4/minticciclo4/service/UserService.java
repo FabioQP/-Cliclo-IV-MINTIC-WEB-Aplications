@@ -91,10 +91,15 @@ public class UserService {
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(Integer id) {
 
-        repository.deleteById(id);
-        return true;
+        List<User> users = repository.getUserById(id);
+        if(users.size() != 0) {
+            repository.delete(users.get(0));
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
