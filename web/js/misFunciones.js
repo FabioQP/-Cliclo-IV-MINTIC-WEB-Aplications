@@ -2,7 +2,7 @@ let currentRef = 0
 function traerInformacionProductos(){
     console.log("test");
         $.ajax({
-        url:"http://132.226.165.142/api/fragance/all",
+        url:"http://localhost:8080/api/fragance/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -60,7 +60,7 @@ function borrarProducto(reference) {
     $.ajax({
         dataType: 'json',
         data: dataToSend,
-        url: "http://132.226.165.142/api/fragance/" + reference,
+        url: "http://localhost:8080/api/fragance/" + reference,
         type: 'DELETE',
         contentType: "application/JSON",
         success: function (response) {
@@ -105,7 +105,7 @@ function editFragance(){
         //utilizo la funcion de JQuery $.ajax para hacer un llamado asincrono
         //a un ws
         $.ajax({
-            url: "http://132.226.165.142/api/fragance/update",
+            url: "http://localhost:8080/api/fragance/update",
             data: datosPeticion,
             type: 'PUT',   
             contentType: "application/JSON",

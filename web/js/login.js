@@ -19,7 +19,7 @@ function login(){
     //a un ws
     $.ajax({
         //url del servicio
-        url: "http://132.226.165.142/api/user/"+ email + "/" + password,
+        url: "http://localhost:8080/api/user/"+ email + "/" + password,
         //tipo de peticion
         type: 'GET',
 

@@ -3,7 +3,7 @@ let currentUser = 0
 
 function getUser() {
     $.ajax({
-        url: "http://132.226.165.142/api/user/all",
+        url: "http://localhost:8080/api/user/all",
         type: "GET",
         datatype: "JSON",
         success: function (response) {
@@ -54,7 +54,7 @@ function borrar(idUser) {
     $.ajax({
         dataType: 'json',
         data: dataToSend,
-        url: "http://132.226.165.142/api/user/" + idUser,
+        url: "http://localhost:8080/api/user/" + idUser,
         type: 'DELETE',
         contentType: "application/JSON",
         success: function (response) {
@@ -73,7 +73,7 @@ function borrar(idUser) {
 function loadData(idUser) {
     $.ajax({
         dataType: 'json',
-        url: "http://132.226.165.142/api/user/" + idUser,
+        url: "http://localhost:8080/api/user/" + idUser,
         type: 'GET',
 
         success: function (response) {
@@ -127,7 +127,7 @@ function updateUser() {
             datatype: 'json',
             data: dataToSend,
             contentType: "application/JSON",
-            url: "http://132.226.165.142/api/user/update",
+            url: "http://localhost:8080/api/user/update",
             type: "PUT",
 
             success: function (response) {

@@ -17,7 +17,7 @@ function saveFragance() {
     //a un ws
     $.ajax({
         //url del servicio
-        url: "http://132.226.165.142/api/fragance/new",
+        url: "http://localhost:8080/api/fragance/new",
         
         //envio datos capturados por el usuario a la peticion
         data: datosPeticion,

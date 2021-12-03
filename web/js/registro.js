@@ -28,7 +28,7 @@ function registrar(){
     //a un ws
     $.ajax({
         //url del servicio
-        url: "http://132.226.165.142/api/user/new",
+        url: "http://localhost:8080/api/user/new",
         
         //envio datos capturados por el usuario a la peticion
         data: datosPeticion,
