@@ -107,7 +107,7 @@
 
           <!--============ Title Form ============-->
           <div class="text-center">
-            <h2 class="text-black">Inicio de sesion</h3>
+            <h2 class="text-black">Inicio de sesion</h2>
           </div>
 
           <!--============ Input User ============-->
@@ -116,8 +116,8 @@
             <div class="input-group mb-3">
               <span class="input-group-text" id="logoInput"><i class="bi bi-person-bounding-box text-black"
                   id="logoPeople"></i></span>
-              <input type="email" class="form-control" placeholder="@ Usuario" name="useremail" id="useremail" required
-                pattern="\S+" title="El usuario no puede llevar espacios en blanco">
+              <input type="email" class="form-control" placeholder="@ Usuario" name="useremail" id="useremail" required="required"
+                title="El usuario no puede llevar espacios en blanco">
             </div>
           </div>
 
@@ -127,9 +127,11 @@
             <div class="input-group mb-3">
               <span class="input-group-text" id="logoInput"><i class="bi bi-key text-black"></i></span>
               <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password"
-                required pattern="\S+" title="La contraseña no puede llevar espacios en blanco">
+                     required="required" title="La contraseña no puede llevar espacios en blanco">
+              <!--
               <span class="input-group-text" id="showPassword" type="button" onclick="showPassword()"><i
                   class="bi bi-eye" id="icon"></i></span>
+                  -->
             </div>
           </div>
 
@@ -139,7 +141,7 @@
 
           <!--Este botton no elimina los datos ingresado-->
           <div class="form-group text-center">
-              <input id="btnMain" type="button" name="submit" class="btn btn-info btn-md" value="Iniciar Secion"onclick="login()" />
+              <input id="btnMain" type="submit" name="submit" class="btn btn-info btn-md" value="Iniciar Secion"onclick="login()" />
           </div>
 
           <!--============ Label Register ============-->

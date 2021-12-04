@@ -1,9 +1,10 @@
 function saveUser() {
     let data = {
+        id:  Math.floor(Math.random() * (100000 - 1)) + 1,
         identification : $("#identificationUser").val(),
         name : $("#nameUser").val(),
-        adress : $("#addressUser").val(),
-        cellphone : $("#cellphone").val(),
+        address : $("#addressUser").val(),
+        cellPhone : $("#cellphoneUser").val(),
         email : $("#emailUser").val(),
         password : $("#passwordUser").val(),
         zone : $("#zoneUser").val(),

@@ -1,10 +1,11 @@
 /**
  * Cargar la libreria de Jquery y ubicar el cursor en el campo de login
  */
+/*
  $(document).ready(function () {
     estadoInicial()
 });
-
+*/
 /**
  * Intenta autenticar al usuario en la aplicaciòn
  */
@@ -15,10 +16,7 @@ function login(){
     console.log(email);
     console.log(password);
 
-    if (email== "") {
-        alert("Email requerido");
-    }
-    else {
+    if (email != "" && password != "") {
         //utilizo la funcion de JQuery $.ajax para hacer un llamado asincrono
         //a un ws
         $.ajax({

@@ -22,46 +22,51 @@ function registrar(){
         name : $("#username").val()
     }
 
-    let datosPeticion = JSON.stringify(datos)
-    console.log(datosPeticion)
-    //utilizo la funcion de JQuery $.ajax para hacer un llamado asincrono
-    //a un ws
-    $.ajax({
-        //url del servicio
-        url: "http://localhost:8080/api/user/new",
-        
-        //envio datos capturados por el usuario a la peticion
-        data: datosPeticion,
+    if(password !== repeatpassword) {
+        alert("Las contraseñas no coinciden");
+    } else {
+        let datosPeticion = JSON.stringify(datos)
+        console.log(datosPeticion)
+        //utilizo la funcion de JQuery $.ajax para hacer un llamado asincrono
+        //a un ws
+        $.ajax({
+            //url del servicio
+            url: "http://localhost:8080/api/user/new",
 
-        //tipo de peticion
-        type: 'POST',
+            //envio datos capturados por el usuario a la peticion
+            data: datosPeticion,
 
-        contentType: "application/JSON",
+            //tipo de peticion
+            type: 'POST',
 
-        //tipo de contenido
-        dataType: 'json',
+            contentType: "application/JSON",
 
-        //success: funcion con acciones si todo sale ok
-        success: function (respuesta) {
-            //escribe en la consola del desarrollador para efectos de depuración
-            console.log(respuesta);
-            resultado(respuesta)	
-        },
+            //tipo de contenido
+            dataType: 'json',
 
-        //error: funcion con acciones si hay error
-        // código a ejecutar si la petición falla;
-        // son pasados como argumentos a la función
-        // el objeto de la petición en crudo y código de estatus de la petición
-        error: function (xhr, status) {
-            //$("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);		
-            console.log("algo fallo");	
-        },
-        //complete: funcion con al final de la petición
-        // código a ejecutar sin importar si la petición falló o no
-        complete: function (xhr, status) {
-            console.log("Todo super bien"  + status);
-        }
-    });
+            //success: funcion con acciones si todo sale ok
+            success: function (respuesta) {
+                //escribe en la consola del desarrollador para efectos de depuración
+                console.log(respuesta);
+                resultado(respuesta)
+            },
+
+            //error: funcion con acciones si hay error
+            // código a ejecutar si la petición falla;
+            // son pasados como argumentos a la función
+            // el objeto de la petición en crudo y código de estatus de la petición
+            error: function (xhr, status) {
+                //$("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                console.log("algo fallo");
+            },
+            //complete: funcion con al final de la petición
+            // código a ejecutar sin importar si la petición falló o no
+            complete: function (xhr, status) {
+                console.log("Todo super bien"  + status);
+            }
+        });
+    }
+
 }
 
 /**
@@ -84,3 +89,6 @@ function estadoInicial(){
     $("#username").focus()
 }
 
+$("#formf").on('submit', function(){
+    registrar();
+});
