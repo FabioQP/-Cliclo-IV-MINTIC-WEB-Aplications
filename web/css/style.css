@@ -138,6 +138,7 @@ select{
 footer{
     background-color: black;
     min-height: 15px;
+    height: auto;
 }
 
 footer p{
@@ -154,4 +155,26 @@ footer p{
 
 #editForm{
     background-color: white;
+}
+
+/*================ CONTACT ================*/
+#image{
+    width: 300px;
+    height: 200px;
+}
+
+#commentUser{
+    resize: none;
+}
+
+#contact{
+    font-weight: 100px;
+    align-items: center;
+    width: 50%;
+    max-width: 600px;
+    height: 350px;
+    border-radius: 15px;
+    padding: 1%; /* grande */
+    background-image: linear-gradient(-225deg, #eaec65 30%, #f58003 70%);
+    max-width: 600px;
 }
