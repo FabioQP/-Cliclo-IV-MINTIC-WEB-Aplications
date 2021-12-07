@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonPropertyOrder({ "id", "identification", "name", "birthDay", "monthBirthDay", "address",  "cellPhone", "email", "password", "zone", "type"})
+@JsonPropertyOrder({ "id", "identification", "name", "birthtDay", "monthBirthtDay", "address",  "cellPhone", "email", "password", "zone", "type"})
 public class User {
 
     @Id
