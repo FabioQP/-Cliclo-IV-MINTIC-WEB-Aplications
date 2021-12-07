@@ -70,87 +70,128 @@
     </li>
   </ul>
 
-  <!-- <header>
-    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Ocho Bits LTDA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-
-              <a class="nav-link active ps-5" aria-current="page" href="./index.html">
-                <div class="sb-nav-link-icon "><i class="fas fa-home "></i></div>
-                Home
-              </a>
-            </li>
-            <li> <a href="registroProductos.html"> Lista de Productors</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header> -->
-
   <!--=======================================-->
   <!--============ REGISTER FORM ============-->
   <!--=======================================-->
 
-  <div class="container">
-    <div id="login-row" class="row justify-content-center align-items-center">
-      <div id="login-column" class="col-md-6">
-        <div id="login-box" class="col-md-12">
-          <form id="userForm" class="form " method="post" action="#">
-            
-            <!--============ Title Form ============-->
-            <div class="text-center"><br>
-              <h2 class="text-white">Registrar Producto</h3>
-            </div>
 
-            <div class="form-group">
-              <label for="brandProd" class="text-white ">Marca</label><br />
-              <input type="text" name="brandProd" id="brandProd" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="modelProd" class="text-white">Referencia</label><br />
-              <input type="text" name="modelProd" id="modelProd" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="categoriaProd" class="text-white">Categoria</label><br>
-              <input type="text" name="categoriaProd" id="categoriaProd" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="presentacionProd" class="text-white">Presentacion</label><br>
-              <input type="text" name="presentacionProd" id="presentacionProd" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="fotoProd" class="text-white">Fotografia</label>
-              <input type="text" name="fotoProd" id="fotoProd" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="descProd" class="text-white">Descripción</label>
-              <input type="text" name="descProd" id="descProd" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="priceProd" class="text-white">Precio</label><br>
-              <input type="number" name="priceProd" id="priceProd" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="quantityProd" class="text-white">Cantidad</label><br>
-              <input type="number" name="quantityProd" id="quantityProd" class="form-control" required>
-            </div>
 
-            <!--============ Buttons ============-->
-            <div class="form-group text-center">
-              <button type="button" onclick=" saveFragance()" id="btnMain" name="guardaeDatos"
-                value="Guardar">Guardar</button>
-              <button type="button" onclick="" id="btnMain" name="cancelarDatos" value="Cancelar">Cancelar</button>
+  <div class="container-fluid">
+    <form id="formf">
+      <div class="row justify-content-center mt-5">
+        <div id="boxForm" class="col-6 p-5 rounded text-black">
+
+          <!--============ Title Form ============-->
+          <div class="text-center">
+            <h2 class="text-black">Registro Producto Nuevo</h3>
+          </div>
+
+          <!--============ Input Reference============-->
+          <div class="form-group">
+            <label for="modelProd">Referencia</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="logoInput"><i class="bi bi-qr-code text-black"
+                  id="logoPeople"></i></span>
+              <input type="text" class="form-control" placeholder="Referencia" name="modelProd" id="modelProd" required>
             </div>
+          </div>
+
+          <!--============ Input Brand ============-->
+          <div class="form-group">
+            <label for="brandProd">Marca</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="logoInput"><i class="bi bi-playstation text-black"
+                  id="logoPeople"></i></span>
+              <input type="text" class="form-control" placeholder="Marca" name="brandProd" id="brandProd" required>
+            </div>
+          </div>
+
+          <!--============ Input Category ============-->
+          <div class="form-group">
+            <label for="categoriaProd">Categoria</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="logoInput"><i class="bi bi-diagram-2-fill text-black"
+                  id="logoPeople"></i></span>
+              <input type="text" class="form-control" placeholder="Categoria" name="categoriaProd" id="categoriaProd"
+                required>
+            </div>
+          </div>
+
+          <!--============ Input Presentation ============-->
+          <div class="form-group">
+            <label for="presentacionProd">Presentacion</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="logoInput"><i class="bi bi-eyedropper text-black"
+                  id="logoPeople"></i></span>
+              <input type="text" class="form-control" placeholder="Presentacion" name="presentacionProd"
+                id="presentacionProd" required>
+            </div>
+          </div>
+
+          <!--============ Input Description ============-->
+          <div class="form-group">
+            <label for="descProd">Descripcion</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="logoInput"><i class="bi bi-chat-square-text-fill text-black"
+                  id="logoPeople"></i></span>
+              <input type="text" class="form-control" placeholder="Descripcion" name="descProd" id="descProd" required>
+            </div>
+          </div>
+
+          <!--============ Input Availability  ============-->
+          <div class="col-md-13">
+            <label for="availabilityProduct" class="form-label" id="labelInput">Disponibilidad</label>
+            <select class="form-select" id="availabilityProduct" required>
+              <option selected disabled value="">Disponibilidad</option>
+              <option value="true">SI</option>
+              <option value="false">NO</option>
+            </select>
+          </div>
+
+          <!--============ Input Price ============-->
+          <div class="form-group">
+            <label for="priceProd">Precio</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="logoInput"><i class="bi bi-currency-dollar text-black"
+                  id="logoPeople"></i></span>
+              <input type="number" min="0" class="form-control" placeholder="Precio" name="priceProd" id="priceProd"
+                required>
+            </div>
+          </div>
+
+          <!--============ Input Quantity ============-->
+          <div class="form-group">
+            <label for="quantityProd">Cantidad</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="logoInput"><i class="bi bi-123 text-black" id="logoPeople"></i></span>
+              <input type="number" min="0" class="form-control" placeholder="Cantidad" name="quantityProd"
+                id="quantityProd" required>
+            </div>
+          </div>
+
+          <!--============ Input Photography ============-->
+          <div class="form-group">
+            <label for="fotoProd">Fotografia</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="logoInput"><i class="bi bi-card-image text-black"
+                  id="logoPeople"></i></span>
+              <input type="text" class="form-control" placeholder="URL Fotografia" name="fotoProd" id="fotoProd"
+                required>
+            </div>
+            <div>
+              <input class="form-control" type="file" id="addPhotography">
+            </div>
+          </div>
+
+          <!--============ Button ============-->
+          <div class="form-group text-center">
+            <!--Este botton no elimina los datos ingresado-->
+            <button class="submit" onclick="saveFragance()" id="btnMain" name="guardaeDatos"
+              value="Guardar">Guardar</button>
+            <button class="button" onclick="" id="btnMain" name="cancelarDatos" value="Cancelar">Cancelar</button>
+          </div>
         </div>
       </div>
-    </div>
     </form>
   </div>
 
