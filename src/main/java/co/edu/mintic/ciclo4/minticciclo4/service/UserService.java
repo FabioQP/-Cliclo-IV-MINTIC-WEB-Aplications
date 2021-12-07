@@ -76,8 +76,8 @@ public class UserService {
                 User existing = result.get(0);
                 existing.setIdentification(user.getIdentification());
                 existing.setName(user.getName());
-                existing.setBirthDay(user.getBirthDay());
-                existing.setMonthBirthDay(user.getMonthBirthDay());
+                existing.setBirthtDay(user.getBirthtDay());
+                existing.setMonthBirthtDay(user.getMonthBirthtDay());
                 existing.setAddress(user.getAddress());
                 existing.setCellPhone(user.getCellPhone());
                 existing.setEmail(user.getEmail());
