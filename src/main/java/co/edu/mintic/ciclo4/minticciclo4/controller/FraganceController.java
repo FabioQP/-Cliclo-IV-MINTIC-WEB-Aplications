@@ -1,6 +1,7 @@
 package co.edu.mintic.ciclo4.minticciclo4.controller;
 
 import co.edu.mintic.ciclo4.minticciclo4.model.Fragance;
+import co.edu.mintic.ciclo4.minticciclo4.model.Order;
 import co.edu.mintic.ciclo4.minticciclo4.model.User;
 import co.edu.mintic.ciclo4.minticciclo4.service.FraganceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/fragance")
@@ -38,5 +40,10 @@ public class FraganceController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") String id) { return service.delete(id); }
+
+    @GetMapping("/{reference}")
+    public Optional<Fragance> getFragenceByReference(@PathVariable("reference") String reference) {
+        return service.getFraganceByReference(reference);
+    }
 
 }

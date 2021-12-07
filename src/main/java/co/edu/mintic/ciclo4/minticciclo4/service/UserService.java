@@ -1,5 +1,6 @@
 package co.edu.mintic.ciclo4.minticciclo4.service;
 
+import co.edu.mintic.ciclo4.minticciclo4.model.Order;
 import co.edu.mintic.ciclo4.minticciclo4.model.User;
 import co.edu.mintic.ciclo4.minticciclo4.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,8 +76,8 @@ public class UserService {
                 User existing = result.get(0);
                 existing.setIdentification(user.getIdentification());
                 existing.setName(user.getName());
-                // existing.setBirthDay(user.getBirthDay());
-                // existing.setMonthBirthDay(user.getMonthBirthDay());
+                existing.setBirthDay(user.getBirthDay());
+                existing.setMonthBirthDay(user.getMonthBirthDay());
                 existing.setAddress(user.getAddress());
                 existing.setCellPhone(user.getCellPhone());
                 existing.setEmail(user.getEmail());
@@ -100,6 +101,12 @@ public class UserService {
         } else {
             return false;
         }
+    }
+
+    public User getUserById(Integer id) {
+
+        List<User> users = repository.getUserById(id);
+        return users.get(0);
     }
 
 }

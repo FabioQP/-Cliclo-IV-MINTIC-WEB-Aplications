@@ -22,6 +22,11 @@ public class UserController {
         return service.findAll();
     }
 
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable("id") Integer id) {
+        return service.getUserById(id);
+    }
+
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public User save(@RequestBody User user) {

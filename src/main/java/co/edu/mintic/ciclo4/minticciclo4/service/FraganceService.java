@@ -1,6 +1,7 @@
 package co.edu.mintic.ciclo4.minticciclo4.service;
 
 import co.edu.mintic.ciclo4.minticciclo4.model.Fragance;
+import co.edu.mintic.ciclo4.minticciclo4.model.Order;
 import co.edu.mintic.ciclo4.minticciclo4.repository.FraganceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,5 +67,11 @@ public class FraganceService {
 
         repository.deleteById(reference);
         return true;
+    }
+
+    public Optional<Fragance> getFraganceByReference(String reference) {
+
+        Optional<Fragance> fragance = repository.getFraganceByReference(reference);
+        return fragance;
     }
 }
