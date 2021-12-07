@@ -1,28 +1,28 @@
 /**
  * Cargar la libreria de Jquery y ubicar el cursor en el campo de registrar
  */
- $(document).ready(function () {
+$(document).ready(function () {
     estadoInicial()
 });
 
 /**
  * Intenta autenticar al usuario en la aplicaciòn
  */
-function registrar(){
+function registrar() {
     //capturar los datos que ingreso el usuario en la pagina
     let name = $("#username").val()
     let email = $("#useremail").val()
     let password = $("#password").val()
     let repeatpassword = $("#passwordrepeat").val()
 
-    let datos={
-        id:  Math.floor(Math.random() * (100000 - 1)) + 1,
-        email : $("#useremail").val(),
-        password : $("#password").val(),
-        name : $("#username").val()
+    let datos = {
+        id: Math.floor(Math.random() * (100000 - 1)) + 1,
+        email: $("#useremail").val(),
+        password: $("#password").val(),
+        name: $("#username").val()
     }
 
-    if(password !== repeatpassword) {
+    if (password !== repeatpassword) {
         alert("Las contraseñas no coinciden");
     } else {
         let datosPeticion = JSON.stringify(datos)
@@ -62,7 +62,7 @@ function registrar(){
             //complete: funcion con al final de la petición
             // código a ejecutar sin importar si la petición falló o no
             complete: function (xhr, status) {
-                console.log("Todo super bien"  + status);
+                console.log("Todo super bien" + status);
             }
         });
     }
@@ -74,21 +74,21 @@ function registrar(){
  * 
  * Configura mensaje de bienvenida o de error según el caso
  */
-function resultado(respuesta){
+function resultado(respuesta) {
     let id = respuesta.id
-    let nombre= respuesta.name
+    let nombre = respuesta.name
 
-    if (id==null)
+    if (id == null)
         alert("Usuario no registrado : " + nombre)
     else
-        alert("Bienvenido : " + id + " "+ nombre)
+        alert("Bienvenido : " + id + " " + nombre)
 
 }
 
-function estadoInicial(){
+function estadoInicial() {
     $("#username").focus()
 }
 
-$("#formf").on('submit', function(){
+$("#formf").on('submit', function () {
     registrar();
 });
