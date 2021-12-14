@@ -22,6 +22,6 @@ public interface OrderRepository extends MongoRepository<Order, String> {
     @Query("{'salesMan.id' : { $eq: ?0 }, 'status' : { $eq: ?1 }}")
     List<Order> ordersSalesManByStatus(Integer id, String status);
 
-    @Query("{'salesMan.id' : { $eq: ?0 }, 'registerDay' : {'$eq': ?1}}")
+    @Query("{'salesMan.id' : { $eq: ?0 }, 'registerDay' : {'$gte': ?1}}")
     List<Order> ordersSalesManByDate(Integer id, Date dateStr);
 }
