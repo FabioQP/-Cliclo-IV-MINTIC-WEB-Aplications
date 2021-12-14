@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -65,4 +66,15 @@ public class OrderService {
         return order;
     }
 
+    public List<Order> ordersSalesManByID(Integer id){
+        return repository.ordersSalesManByID(id);
+    }
+
+    public List<Order> ordersSalesManByStatus(Integer id, String state){
+        return repository.ordersSalesManByStatus(id, state);
+    }
+
+    public List<Order> ordersSalesManByDate(Integer id, Date dateStr) {
+        return repository.ordersSalesManByDate(id, dateStr);
+    }
 }
