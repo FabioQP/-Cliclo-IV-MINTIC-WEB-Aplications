@@ -67,11 +67,6 @@ public class OrderController {
     public List<Order> ordersSalesManByDate(@PathVariable("date") String dateStr, @PathVariable("id") Integer id) throws ParseException {
 
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
-
-        System.out.println("id > " + id);
-        System.out.println("dateStr > " + dateStr);
-        System.out.println("date > " + date);
-
         return service.ordersSalesManByDate(id, date);
     }
 }

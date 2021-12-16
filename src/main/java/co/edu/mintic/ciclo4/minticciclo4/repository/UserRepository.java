@@ -15,6 +15,9 @@ public interface UserRepository extends MongoRepository<User, String> {
     @Query("{email : { $eq: ?0 }}")
     List<User> getUserByEmail(String email);
 
-    @Query("{email :?0, password :?1}")
+    @Query("{email :{ $eq: ?0 }, password :{ $eq: ?1 }}")
     Optional<User> getUserByEmailAndPassword(String email, String password);
+
+    @Query("{monthBirthtDay :{ $eq: ?0 }}")
+    List<User> birthtDayList(String monthBirthtDay);
 }

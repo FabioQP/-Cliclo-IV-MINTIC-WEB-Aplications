@@ -74,4 +74,12 @@ public class FraganceService {
         Optional<Fragance> fragance = repository.getFraganceByReference(reference);
         return fragance;
     }
+
+    public List<Fragance> gadgetsByPrice(double price) {
+        return repository.gadgetsByPrice(price);
+    }
+
+    public List<Fragance> findByDescriptionLike(String description) {
+        return repository.findByDescriptionLike(description);
+    }
 }

@@ -109,4 +109,8 @@ public class UserService {
         return users.get(0);
     }
 
+    public List<User> birthtDayList(String monthBirthtDay) {
+        return repository.birthtDayList(monthBirthtDay);
+    }
+
 }

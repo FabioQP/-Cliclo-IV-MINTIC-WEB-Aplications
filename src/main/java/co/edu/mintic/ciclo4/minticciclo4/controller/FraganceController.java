@@ -46,4 +46,13 @@ public class FraganceController {
         return service.getFraganceByReference(reference);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Fragance> gadgetsByPrice(@PathVariable("price") double precio) {
+        return service.gadgetsByPrice(precio);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<Fragance> findByDescriptionLike(@PathVariable("description") String description) {
+        return service.findByDescriptionLike(description);
+    }
 }
