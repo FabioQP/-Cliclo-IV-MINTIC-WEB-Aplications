@@ -15,6 +15,6 @@ public interface FraganceRepository extends MongoRepository<Fragance, String> {
     @Query("{price : { $eq: ?0 }}")
     List<Fragance> gadgetsByPrice(double price);
 
-    @Query("{description : { $eq: ?0 }}")
+    @Query("{description : { $regex : ?0 }}")
     List<Fragance> findByDescriptionLike(String description);
 }
